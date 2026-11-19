@@ -1,6 +1,6 @@
 controller:
   image:
-    repository: ingress-controller/controller
+    repository: ingress-controller/controller-gjk
     tag: 1.0.0-dev
     digest: null
 
