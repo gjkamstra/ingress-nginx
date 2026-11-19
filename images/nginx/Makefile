@@ -14,8 +14,8 @@
 
 BUILDER ?= ingress-nginx
 PLATFORMS ?= linux/amd64,linux/arm,linux/arm64
-REGISTRY ?= us-central1-docker.pkg.dev/k8s-staging-images/ingress-nginx
-IMAGE ?= $(REGISTRY)/nginx
+REGISTRY ?= ghcr.io/gjkamstra/ingress-nginx
+IMAGE ?= $(REGISTRY)/nginx-gjk
 TAG ?= $(shell cat TAG)
 
 .PHONY: builder

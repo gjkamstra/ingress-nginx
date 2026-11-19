@@ -88,7 +88,7 @@ fi
 KIND_WORKERS=$(kind get nodes --name="${KIND_CLUSTER_NAME}" | awk '{printf (NR>1?",":"") $1}')
 echo "[dev-env] copying docker images to cluster..."
 
-kind load docker-image --name="${KIND_CLUSTER_NAME}" --nodes=${KIND_WORKERS} ${REGISTRY}/controller:${TAG}
+kind load docker-image --name="${KIND_CLUSTER_NAME}" --nodes=${KIND_WORKERS} ${REGISTRY}/controller-gjk:${TAG}
 
 if [ "${SKIP_CERT_MANAGER_CREATION:-false}" = "false" ]; then
   echo "[dev-env] deploying cert-manager..."

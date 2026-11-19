@@ -14,8 +14,8 @@
 
 BUILDER ?= ingress-nginx
 PLATFORMS ?= linux/amd64,linux/arm64
-REGISTRY ?= us-central1-docker.pkg.dev/k8s-staging-images/ingress-nginx
-IMAGE ?= $(REGISTRY)/e2e-test-runner
+REGISTRY ?= ghcr.io/gjkamstra/ingress-nginx
+IMAGE ?= $(REGISTRY)/e2e-test-runner-gjk
 TAG ?= $(shell cat TAG)
 
 DIR = $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
