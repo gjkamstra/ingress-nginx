@@ -124,6 +124,7 @@ jobs:
 
   controller:
     name: Push controller-gjk / controller-chroot-gjk
+    needs: nginx
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -151,4 +152,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push controller + controller-chroot
-        run: make release
+        run: |
+          export BASE_IMAGE=${REGISTRY}/nginx-gjk:$(cat images/nginx/TAG)
+          make release BASE_IMAGE=${BASE_IMAGE}
