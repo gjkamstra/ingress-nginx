@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> This is a supported replacement of the original [kubernetes/ingress-nginx](https://github.com/kubernetes/ingress-nginx) repository, which was archived on March 24, 2026.
+> This is a private, unsupported fork of the original [kubernetes/ingress-nginx](https://github.com/kubernetes/ingress-nginx) repository, which was archived on March 24, 2026.
 >
 > Community contributions are not being accepted at this time. The documentation has been carried over directly from the original repository and may not reflect recent changes.
 >
