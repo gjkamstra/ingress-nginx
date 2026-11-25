@@ -151,6 +151,13 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # The root TAG file is the Makefile's default, but it's only updated by hand and
+      # drifts from the git tag that actually triggered this run. Export TAG here so it
+      # wins over the Makefile's `TAG ?= $(shell cat TAG)` fallback.
+      - name: Pin controller image tag to the pushed git tag
+        if: startsWith(github.ref, 'refs/tags/')
+        run: echo "TAG=${{ github.ref_name }}" >> "$GITHUB_ENV"
+
       - name: Build and push controller + controller-chroot
         run: |
           export BASE_IMAGE=${REGISTRY}/nginx-gjk:$(cat images/nginx/TAG)
